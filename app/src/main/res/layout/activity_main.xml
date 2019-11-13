@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    >
+
+    <ImageView
+        android:id="@+id/home_icon"
+        android:layout_width="27dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/menu_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/menu_bar" />
+
+    <TextView
+        android:id="@+id/contact_list"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
+        android:contentDescription="@string/contact_header"
+        android:text="@string/contactList"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/fontColor"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_icon" />
+
+    <ImageView
+        android:id="@+id/magnifier"
+        android:layout_width="27dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/search_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/contact_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.94"
+        app:layout_constraintStart_toEndOf="@+id/contact_list"
+        app:layout_constraintTop_toTopOf="@+id/contact_list"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@mipmap/searchicon" />
+
+
+    <ImageView
+        android:id="@+id/list_divisor"
+        android:layout_width="353dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/line_bar"
+        android:contentDescription="@string/contact_divisor"
+        android:paddingLeft="5dp"
+        android:paddingTop="1dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="1dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="@+id/magnifier"
+        app:layout_constraintHorizontal_bias="0.846"
+        app:layout_constraintStart_toStartOf="@+id/contact_list"
+        app:layout_constraintTop_toBottomOf="@+id/contact_list"
+        app:srcCompat="@drawable/line_bar" />
+
+    <include
+        layout="@layout/contact_item_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/list_divisor"
+        app:layout_constraintTop_toTopOf="@+id/list_divisor" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:layout_marginTop="492dp"
+        android:layout_marginEnd="16dp"
+        android:scaleType="center"
+        android:textAlignment="center"
+        app:backgroundTint="#FFFFFF"
+        app:elevation="5dp"
+        app:fabCustomSize="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.953"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/list_divisor"
+        app:layout_constraintVertical_bias="0.96"
+        app:rippleColor="#A8A5A5"
+        app:srcCompat="@drawable/plus" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
